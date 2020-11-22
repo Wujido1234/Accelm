@@ -22,7 +22,7 @@ This code book describes the data used in this project, as well as the processin
 ### Processing steps
 
 1. Data files were read into data frames for further processing
-* `Ex: subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
+* `Ex: subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")`
 
 appropriate column headers were added, and the training and test sets were combined into a single data set.
 2. All feature columns were removed that did not contain the exact string "mean()" or "std()". This left 66 feature columns, plus the subjectID and activity columns.
