@@ -7,7 +7,7 @@ The class project for [Getting and Cleaning Data](https://www.coursera.org/cours
 1. Downloads zip file from (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 2. Unzips the file and reads in data files to tables for further mining
 3. Creates a tidy data set from individual tables mapped to activity and subject for the Mean() and Std()
-4. Creates a seperate tidy data set from the above for the Mean() of all combined elements
+4. Creates separate tidy data set for the Mean() of all combined elements and outputs to csv
 
 
 
