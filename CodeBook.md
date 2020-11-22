@@ -13,16 +13,16 @@ This code book describes the data used in this project, as well as the processin
 
 * `Xtrain.txt`: 7352 observations of the 561 features, for 21 of the 30 volunteers.
 * `subject_train.txt`: 7352 integers, denoting the ID of the volunteer related to each of the observations in `Xtrain.txt`.
-* `ytrain.txt`: A vector of 7352 integers, denoting the ID of the activity related to each of the observations in `X_train.txt`.
+* `Ytrain.txt`: A vector of 7352 integers, denoting the ID of the activity related to each of the observations in `Xtrain.txt`.
 * `Xtest.txt`: 2947 observations of the 561 features, for 9 of the 30 volunteers.
 * `subject_test.txt`: 2947 integers, denoting the ID of the volunteer related to each of the observations in `Xtest.txt`.
-* `Ytest.txt`: A vector of 2947 integers, denoting the ID of the activity related to each of the observations in `X_test.txt`.
+* `Ytest.txt`: A vector of 2947 integers, denoting the ID of the activity related to each of the observations in `Xtest.txt`.
 
 
 ### Processing steps
 
 1. Data files were read into data frames for further processing
-* Ex: subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
+* `Ex: subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
 
 appropriate column headers were added, and the training and test sets were combined into a single data set.
 2. All feature columns were removed that did not contain the exact string "mean()" or "std()". This left 66 feature columns, plus the subjectID and activity columns.
