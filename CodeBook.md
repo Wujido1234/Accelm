@@ -30,7 +30,7 @@ Create a vector of only mean and std labels from combined data set "ComSet".
 * ComSet : at the end of this step, ComSet will only contain mean and std variables
 
 ## 3. Changing Column label of ComSet
-Create a vector of normalized feature names by eliminating trailing "()". T
+Create a vector of normalized feature names by eliminating trailing "()".
 * FeatureNames : a vector of normalized feature names 
 
 ## 4. Adding Subject and Activity to ComSet
