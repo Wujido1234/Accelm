@@ -1,6 +1,6 @@
 ## Code Book
 
-This code book describes the data used in this project, as well as the processing required to create the resulting tidy data set.
+This code book describesdata used, and the process required to create the resulting tidy data set.
 
 ### Overview
 
@@ -21,11 +21,29 @@ This code book describes the data used in this project, as well as the processin
 
 ### Processing steps
 
-1. Data files were read into data frames for further processing
-* `Ex: subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")`
+## 1. Read data and Merge
+Read in table files into tables represented above
 
-appropriate column headers were added, and the training and test sets were combined into a single data set.
-2. All feature columns were removed that did not contain the exact string "mean()" or "std()". This left 66 feature columns, plus the subjectID and activity columns.
-3. The activity column was converted from a integer to a factor, using labels describing the activities.
-4. A tidy data set was created containing the mean of each feature for each subject and each activity. Thus, subject #1 has 6 rows in the tidy data set (one row for each activity), and each row contains the mean value for each of the 66 features for that subject/activity combination. Since there are 30 subjects, there are a total of 180 rows.
-5. The tidy data set was output to a CSV file.
+## 2. Extract mean() and std()
+Create a vector of only mean and std labels from combined data set "ComSet".
+* MeanSD : a vector of mean and std elements extracted from 2nd column of features
+* ComSet : at the end of this step, ComSet will only contain mean and std variables
+
+## 3. Changing Column label of ComSet
+Create a vector of normalized feature names by eliminating trailing "()". T
+* FeatureNames : a vector of normalized feature names 
+
+## 4. Adding Subject and Activity to ComSet
+Combine test data and train data of subject and activity, then provide descriptive labels of the same name. Row Bind with ComSet. 
+* subject : bind of subject_train and subject_test
+* activity : bind of Ytrain and Ytest
+
+## 5. Replace numeric ID to activity name
+Group the activity column of ComSet as "Cgroup", then rename each level with 2nd column of activity_levels. Apply the renamed "Cgroup" to ComSet's activity column.
+* Cgroup : factored activity column of dataSet 
+
+## 6. Output tidy data
+Melt ComSet to create tidy data set and output to file containing the mean of all elements. 
+* MeltMean : melt "subject" and "activity" for ComSet
+* tidy : dcast MeltMean which has means of each element
+* Output to 'tidy_mean.txt'
