@@ -79,4 +79,4 @@ MeltMean <- melt(ComSet,(id.vars=c("subject","activity")))
 tidy <- dcast(MeltMean, subject+activity ~ variable, mean)
 
 names(tidy)[-c(1:2)] <- paste("[mean of]" , names(tidy)[-c(1:2)] )
-write.csv(tidy, "tidy_mean.csv", row.names=FALSE)
+write.table(tidy, "tidy_mean.txt", row.names=FALSE)
